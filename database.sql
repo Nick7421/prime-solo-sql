@@ -29,4 +29,13 @@ How do you delete users that reside in miami OR phoenix and have completed fewer
 DELETE FROM "accounts" WHERE ("city" = 'miami' OR "city" = 'phoenix') AND "transactions_completed" < 5;
 
 Strech Goals
+--1. Anthony moved to Santa Fe.
+UPDATE "accounts" SET "city" = 'santa fe' WHERE "user_id" = 5;
+--2 Grace closed her account.
+DELETE FROM "accounts" WHERE "username" = 'grace';
+--3 Travis made a withdrawl of $20,000. What's their new balance? NOTE: Research RETURNING
+UPDATE "accounts" SET "account_balance" = "account_balance" - 20000 WHERE "user_id" = 6 RETURNING "user_id","account_balance";
+
+
+
 
